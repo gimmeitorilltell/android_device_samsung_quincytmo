@@ -31,9 +31,18 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8660_SURF
 # Assert
 TARGET_OTA_ASSERT_DEVICE := SGH-T879,quincytmo
 
+# FM radio
+PRODUCT_PACKAGES += \
+    FM2 \
+    FMRecord \
+    libqcomfm_jni \
+    qcom.fmradio
+
 # Kernel
-TARGET_KERNEL_SOURCE        := kernel/samsung/msm8660-common
-TARGET_KERNEL_CONFIG        := cyanogenmod_quincytmo_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_quincytmo_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/msm8660-common
+KERNEL_TOOLCHAIN_PREFIX := arm-linux-gnueabihf-
+KERNEL_TOOLCHAIN := "$(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/linaro-4.7-12.10/bin/"
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
@@ -43,5 +52,3 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 2147483648
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/quincytmo/bluetooth
-
-
