@@ -1,2 +1,2 @@
-add_lunch_combo cm_quincytmo-eng
+add_lunch_combo cm_quincytmo-userdebug
 
